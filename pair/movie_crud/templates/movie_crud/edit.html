@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form class="m-3" action="{% url 'movie_crud:recreate' re.pk %}">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">제목</label>
+        <input type="text" name="title" class="form-control" id="exampleFormControlInput1" value="{{ re.title }}">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">내용</label>
+        <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3">{{ re.content }}
+        </textarea>
+    </div>
+    <div class="d-grid gap-2">
+        <input type="submit" class="form-control" placeholder="Username" aria-label="Username"
+            aria-describedby="basic-addon1" maxlength="80" value="리뷰 수정">
+    </div>
+</form>
+
+{% endblock %}
