@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="m-3">
+  <h1>{{ re.title }}</h1>
+  <p>{{ re.content }}</p>
+  <a class="btn btn-primary py-sm-1" href="{% url 'movie_crud:edit' re.pk %}" role="button">변경</a>
+  <a class="btn btn-danger py-sm-1" href="{% url 'movie_crud:delete' re.pk %}" role="button">삭제</a>
+</div>
+{% endblock %}
